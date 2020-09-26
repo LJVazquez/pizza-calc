@@ -1,3 +1,12 @@
 *{
     /border: 1px solid black;
 }
+
+.hidden{
+    display: none;
+}
+
+.number{
+    font-size: 2em;
+    display: block;
+}

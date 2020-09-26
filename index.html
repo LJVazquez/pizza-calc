@@ -9,11 +9,12 @@
     <title>Pizza calc v0</title>
 </head>
 <body>
-    <header class="container mb-5">
+    <header class="container">
         <img src="img/goat.jpg" alt="Cabra" class="img-fluid">
     </header>
     <main class="container">
-        <form action="RELLENAR" class="form">
+
+        <form action="RELLENAR" class="form m-5">
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="pizza-type"
@@ -36,6 +37,22 @@
                     <label for="arg" class="form-check-label">Argentina</label>
                 </div>
             </div>
+            
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="yeast"
+                    id="fresh" value="fresh">
+                    <label for="fresh" class="form-check-label">Fresca</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="yeast"
+                    id="dry" value="dry">
+                    <label for="dry" class="form-check-label">Seca</label>
+                </div>
+            </div>
+
+
+
             <label for="dough-num">Cantidad de pizzas</label>
             <input type="number" class="form-control" id="dough-num" min="1"
             value="1">
@@ -52,6 +69,43 @@
             <input type="number" class="form-control" id="oil" min="1"
             value="1">
         </form>
+
+        <div class="container" id="sizes">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-flour">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Harina<span class="number">30</span>gr</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-water">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Agua<span class="number">30</span>gr</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-yeast">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Levadura<span class="number">30</span>gr</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-salt">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Sal<span class="number">30</span>gr</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-oil">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Aceite<span class="number">30</span>gr</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
+                id="sizes-sugar">
+                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <p>Azucar<span class="number">30</span>gr</p>
+                </div>
+                
+            </div>
+        </div>
+
     </main>
     
 
