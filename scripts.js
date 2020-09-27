@@ -1,33 +1,62 @@
-const napoDict = {
-    weight: 230,
-    hidra: 65,
-    salt: 3,
+const pizzaProp = {
+    napo: {
+        weight: 230,
+        hidra: 65,
+        salt: 3,
+        oil: 1,
+    },
+    sici: {
+        weight: 650,
+        hidra: 75,
+        salt: 2,
+        oil: 2,
+    },
+    ny: {
+        weight: 240,
+        hidra: 75,
+        salt: 2,
+        oil: 3,
+    }
 };
-
-const siciDict = {
-    weight: 650,
-    hidra: 75,
-    salt: 2,
-}
 
 const napo = document.getElementById('napo');
 const sici = document.getElementById('sici');
+const ny = document.getElementById('ny');
 
-napo.addEventListener('click', function(){
+function napoProp(){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
-    weight.value = napoDict['weight'];
-    hidra.value = napoDict['hidra'];
-    salt.value = napoDict['salt'];
-})
-
-sici.addEventListener('click', function(){
+    let oil = document.getElementById('oil');
+    weight.value = pizzaProp['napo']['weight'];
+    hidra.value = pizzaProp['napo']['hidra'];
+    salt.value = pizzaProp['napo']['salt'];
+    oil.value = pizzaProp['napo']['oil'];
+}
+function siciProp(){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
-    weight.value = siciDict['weight'];
-    hidra.value = siciDict['hidra'];
-    salt.value = siciDict['salt'];
-})
+    let oil = document.getElementById('oil');
+    weight.value = pizzaProp['sici']['weight'];
+    hidra.value = pizzaProp['sici']['hidra'];
+    salt.value = pizzaProp['sici']['salt'];
+    oil.value = pizzaProp['sici']['oil'];
+}
+function nyProp(){
+    let weight = document.getElementById('dough-weight');
+    let hidra = document.getElementById('hidra');
+    let salt = document.getElementById('salt');
+    let oil = document.getElementById('oil');
+    weight.value = pizzaProp['ny']['weight'];
+    hidra.value = pizzaProp['ny']['hidra'];
+    salt.value = pizzaProp['ny']['salt'];
+    oil.value = pizzaProp['ny']['oil'];
+}
+
+napo.addEventListener('click', napoProp);
+sici.addEventListener('click', siciProp);
+ny.addEventListener('click', nyProp);
+
+
 
