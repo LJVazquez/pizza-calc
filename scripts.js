@@ -25,16 +25,12 @@ const pizzaProp = {
     }
 };
 
-const napo = document.getElementById('napo');
-const sici = document.getElementById('sici');
-const ny = document.getElementById('ny');
-const arg = document.getElementById('arg');
-
 function ing(type){
     return pizzaProp[type];
 }
 
 function prop(pizza){
+    const type = document.getElementById(pizza);
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
