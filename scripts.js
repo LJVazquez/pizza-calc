@@ -25,12 +25,12 @@ const pizzaProp = {
     }
 };
 
+
 function ing(type){
     return pizzaProp[type];
 }
 
 function prop(pizza){
-    const type = document.getElementById(pizza);
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
