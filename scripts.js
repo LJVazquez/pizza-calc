@@ -30,35 +30,39 @@ const sici = document.getElementById('sici');
 const ny = document.getElementById('ny');
 const arg = document.getElementById('arg');
 
+function ing(pizza){
+    return pizzaProp[pizza];
+}
 function napoProp(){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
     let oil = document.getElementById('oil');
-    weight.value = pizzaProp['napo']['weight'];
-    hidra.value = pizzaProp['napo']['hidra'];
-    salt.value = pizzaProp['napo']['salt'];
-    oil.value = pizzaProp['napo']['oil'];
+    weight.value = ing('napo')['weight'];
+    hidra.value = ing('napo')['hidra'];
+    salt.value = ing('napo')['salt'];
+    oil.value = ing('napo')['oil'];
 }
+
 function siciProp(){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
     let oil = document.getElementById('oil');
-    weight.value = pizzaProp['sici']['weight'];
-    hidra.value = pizzaProp['sici']['hidra'];
-    salt.value = pizzaProp['sici']['salt'];
-    oil.value = pizzaProp['sici']['oil'];
+    weight.value = ing('sici')['weight'];
+    hidra.value = ing('sici')['hidra'];
+    salt.value = ing('sici')['salt'];
+    oil.value = ing('sici')['oil'];
 }
 function nyProp(){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
     let oil = document.getElementById('oil');
-    weight.value = pizzaProp['ny']['weight'];
-    hidra.value = pizzaProp['ny']['hidra'];
-    salt.value = pizzaProp['ny']['salt'];
-    oil.value = pizzaProp['ny']['oil'];
+    weight.value = ing('ny')['weight'];
+    hidra.value = ing('ny')['hidra'];
+    salt.value = ing('ny')['salt'];
+    oil.value = ing('ny')['oil'];
 }
 
 function argProp(){
@@ -66,10 +70,10 @@ function argProp(){
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
     let oil = document.getElementById('oil');
-    weight.value = pizzaProp['arg']['weight'];
-    hidra.value = pizzaProp['arg']['hidra'];
-    salt.value = pizzaProp['arg']['salt'];
-    oil.value = pizzaProp['arg']['oil'];
+    weight.value = ing('arg')['weight'];
+    hidra.value = ing('arg')['hidra'];
+    salt.value = ing('arg')['salt'];
+    oil.value = ing('arg')['oil'];
 }
 
 napo.addEventListener('click', napoProp);
