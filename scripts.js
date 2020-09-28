@@ -21,7 +21,7 @@ function ing(type){
     return pizzaProp[type];
 }
 
-function prop(pizza){
+function formValues(pizza){
     let weight = document.getElementById('dough-weight');
     let hidra = document.getElementById('hidra');
     let salt = document.getElementById('salt');
@@ -29,15 +29,10 @@ function prop(pizza){
     hidra.value = ing(pizza)['hidra'];
     salt.value = ing(pizza)['salt'];
 }
-prop('napo');
 
 const napo = document.getElementById('napo');
 const sici = document.getElementById('sici');
 const ny = document.getElementById('ny');
-
-napo.addEventListener('click', () => prop('napo'));
-sici.addEventListener('click', () => prop('sici'));
-ny.addEventListener('click', () => prop('ny'));
 
 const ingNums = {
     flour: document.getElementById('flour-num'),
@@ -50,16 +45,43 @@ const ingNums = {
 
 function getNapo(){
     weight = document.getElementById('dough-weight').value;
-    flour = Math.round(weight / 1.68);
     hidra = document.getElementById('hidra').value;
     salt = document.getElementById('salt').value;
+    flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.002));
     ingNums['flour'].innerText = flour;
     ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
     ingNums['yeast'].innerText = Math.round(flour * 0.02 ) / 100; // redondeado
     ingNums['salt'].innerText = Math.round(flour * 3 / 100);
 }
+function getSici(){
+    weight = document.getElementById('dough-weight').value;
+    hidra = document.getElementById('hidra').value;
+    salt = document.getElementById('salt').value;
+    flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.03 /*lev+aceit*/));
+    ingNums['flour'].innerText = flour;
+    ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
+    ingNums['yeast'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
+    ingNums['oil'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
+    ingNums['salt'].innerText = Math.round(flour * 2 / 100);
+}
 
-getNapo()
+const pizzaSelect = document.getElementById('pizza-type');
+pizzaSelect.addEventListener('change', () => allInOne(pizzaSelect.value));
+
+function allInOne(pizza){
+    formValues(pizza);
+    if (pizza === 'napo'){
+        getNapo();
+    } else if(pizza === 'sici'){
+        getSici();
+    } else {
+        getNy();
+    }
+}
+
+allInOne ('napo'); // ESTABLECE VALORES POR DEFECTO AL CARGAR LA PAGINA
+
+
 
 function hideIngredients(){
     if(ingNums.oil.innerText === '0'){
@@ -70,5 +92,3 @@ function hideIngredients(){
     }
 
 }
-
-hideIngredients();
