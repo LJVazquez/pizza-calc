@@ -18,7 +18,7 @@
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="pizza-type"
-                    id="napo" value="napo">
+                    id="napo" value="napo" checked>
                     <label for="napo" class="form-check-label">Napolitana</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -29,19 +29,14 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="pizza-type"
                     id="ny" value="ny">
-                    <label for="ny" class="form-check-label">New York</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pizza-type"
-                    id="arg" value="arg">
-                    <label for="arg" class="form-check-label">Argentina</label>
+                    <label for="ny" class="form-check-label">American</label>
                 </div>
             </div>
             
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="yeast"
-                    id="fresh" value="fresh">
+                    id="fresh" value="fresh" checked>
                     <label for="fresh" class="form-check-label">Fresca</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -62,11 +57,8 @@
             <label for="hidra">Cantidad de agua [%]</label>
             <input type="number" class="form-control" id="hidra" min="1"
             value="1">
-            <label for="sal">Cantidad de sal [%]</label>
+            <label for="salt">Cantidad de sal [%]</label>
             <input type="number" class="form-control" id="salt" min="1"
-            value="1">
-            <label for="oil">Cantidad de aceite [%]</label>
-            <input type="number" class="form-control" id="oil" min="1"
             value="1">
         </form>
 
@@ -75,32 +67,32 @@
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-flour">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Harina<span class="number">30</span>gr</p>
+                    <p>Harina<span class="number" id="flour-num">0</span>gr</p>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-water">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Agua<span class="number">30</span>gr</p>
+                    <p>Agua<span class="number" id="hidra-num">0</span>gr</p>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-yeast">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Levadura<span class="number">30</span>gr</p>
+                    <p>Levadura<span class="number" id="yeast-num">0</span>gr</p>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-salt">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Sal<span class="number">30</span>gr</p>
+                    <p>Sal<span class="number" id="salt-num">0</span>gr</p>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-oil">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Aceite<span class="number">30</span>gr</p>
+                    <p>Aceite<span class="number" id="oil-num">0</span>gr</p>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-sugar">
                     <img src="https://picsum.photos/100" alt="" class="img-fluid">
-                    <p>Azucar<span class="number">30</span>gr</p>
+                    <p>Azucar<span class="number" id="sugar-num">0</span>gr</p>
                 </div>
                 
             </div>
