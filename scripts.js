@@ -51,7 +51,7 @@ function getNapo(){
     ingNums['flour'].innerText = flour;
     ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
     ingNums['yeast'].innerText = Math.round(flour * 0.02 ) / 100; // redondeado
-    ingNums['salt'].innerText = Math.round(flour * 3 / 100);
+    ingNums['salt'].innerText = Math.round(flour * salt / 100);
 }
 function getSici(){
     weight = document.getElementById('dough-weight').value;
@@ -62,7 +62,20 @@ function getSici(){
     ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
     ingNums['yeast'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
     ingNums['oil'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
-    ingNums['salt'].innerText = Math.round(flour * 2 / 100);
+    ingNums['salt'].innerText = Math.round(flour * salt / 100);
+}
+function getNy(){
+    weight = document.getElementById('dough-weight').value;
+    hidra = document.getElementById('hidra').value;
+    salt = document.getElementById('salt').value;
+    flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.004 + 0.025 +
+        0.02));
+    ingNums['flour'].innerText = flour;
+    ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
+    ingNums['yeast'].innerText = Math.round(flour * 0.4 ) / 100; // redondeado
+    ingNums['oil'].innerText = Math.round(flour * 2.5 ) / 100; // redondeado
+    ingNums['salt'].innerText = Math.round(flour * salt / 100);
+    ingNums['sugar'].innerText = Math.round(flour * 2 / 100);
 }
 
 const pizzaSelect = document.getElementById('pizza-type');
