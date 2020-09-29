@@ -1,31 +1,45 @@
 *{
     /border: 1px solid black;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-col: #e05144;
 }
 
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Neucha', cursive;
+    background-color: #F4FDF8;
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3em;
+}
+
+.page-width{
+    margin: 0 auto;
+    min-width: 350px;
+    max-width: 80vmin;
 }
 
 .inputs{
     border-radius: 15px;
-    color: lightcyan;
-    background-color: lightslategrey;
+    color: #3C3530;
+    background-color: #AACD6E;
 }
 
-#switch-language{
-    height: 5vh;
+#submit{
+    background-color: var(--main-col);
+    color: #F4FDF8;
+}
+
+#web-title{
+    color: var(--main-col);
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
 }
 
 #logo-img{
-    height: 30vh;
-}
-
-#logo-text{
-    color: lightcyan;
-
+    min-height: 10vmax;
+    max-height: 20vh;
 }
 
 .hidden{
@@ -35,4 +49,21 @@ body{
 .number{
     font-size: 2em;
     display: block;
+}
+
+footer{
+    color: #F4FDF8;
+    background-color: var(--main-col);
+    font-size: 1rem;
+}
+
+footer a{
+    color: lightsteelblue;
+}
+
+#spa, #spa a, #eng, #eng a ,#spa img, #eng img{
+    color: white;
+    display: inline-block;
+    height: 2rem;
+    margin: auto 0.5rem;
 }
