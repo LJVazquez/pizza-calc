@@ -2,6 +2,32 @@
     /border: 1px solid black;
 }
 
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Neucha', cursive;
+    font-size: 1.3em;
+}
+
+.inputs{
+    border-radius: 15px;
+    color: lightcyan;
+    background-color: lightslategrey;
+}
+
+#switch-language{
+    height: 5vh;
+}
+
+#logo-img{
+    height: 30vh;
+}
+
+#logo-text{
+    color: lightcyan;
+
+}
+
 .hidden{
     display: none;
 }

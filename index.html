@@ -6,18 +6,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="scripts.js" async></script>
-    <title>Pizza calc v0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <title>Pizza calc v1</title>
 </head>
 <body>
-    <header class="container">
-        <img src="img/goat.jpg" alt="Cabra" class="img-fluid">
+<!-- CAMBIAR IMAGEN DEL BOTON 
+        <nav class="container-fluid">
+        <div class="row text-right">
+            <div class="col-12 pt-3">
+                <a href="#">
+                    <img src="img/united-states.svg" alt="change-language"
+                    id="switch-language">
+                </a>
+            </div>
+        </div>
+    </nav> 
+-->     
+    <header class="container py-2">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="img/logo-cyan.svg" alt="logo" id="logo-img">
+                <h1 id="logo-text">Calculadora de Pizzas</h1>
+            </div>
+        </div>
     </header>
     <main class="container">
 
-        <form action="RELLENAR" class="form m-5">
+        <form action="" class="form mb-5 text-center">
             <div class="form-group">
                 <label for="pizza-type">Tipo de pizza</label>
-                <select name="pizza-type" class="custom-select" id="pizza-type">
+                <select name="pizza-type" class="custom-select inputs border-0"
+                id="pizza-type">
                     <option value="napo" id="napo">Napolitana</option>
                     <option value="sici" id="sici">Siciliana</option>
                     <option value="ny" id="ny">New York</option>
@@ -26,62 +45,62 @@
             
             <div class="form-group">
                 <label for="dough-num">Cantidad de pizzas</label>
-                <input type="number" class="form-control" id="amount" min="1"
-                value="1">
+                <input type="number" class="form-control border-0 inputs" 
+                id="amount" min="1" value="1">
             </div>
             <div class="form-group">
                 <label for="dough-weight">Peso del bollo</label>
-                <input type="number" class="form-control" id="dough-weight" min="1"
-                value="1">
+                <input type="number" class="form-control border-0 inputs" 
+                id="dough-weight" min="1" value="1">
             </div>
             <div class="form-group">
                 <label for="hidra">Cantidad de agua [%]</label>
-                <input type="number" class="form-control" id="hidra" min="1"
-                value="1">
+                <input type="number" class="form-control border-0 inputs" 
+                id="hidra" min="1" value="1">
             </div>
             <div class="form-group">
                 <label for="salt">Cantidad de sal [%]</label>
-                <input type="number" class="form-control" id="salt" min="1"
-                value="1">
+                <input type="number" class="form-control border-0 inputs" 
+                id="salt" min="1" value="1">
             </div>
             <div class="row">
                 <div class="col text-right">
-                    <button type="button" class="btn btn-success text-right" 
+                    <button type="button" class="btn text-right inputs" 
                     id="submit">Obtener valores</button>
                 </div>
             </div>
         </form>
 
         <div class="container" id="sizes">
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-flour">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/flour.svg" alt="" class="img-fluid">
                     <p>Harina<span class="number" id="flour-num">0</span>gr</p>
                 </div>
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-water">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/water.svg" alt="" class="img-fluid">
                     <p>Agua<span class="number" id="hidra-num">0</span>gr</p>
                 </div>
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-yeast">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/yeast.svg" alt="" class="img-fluid">
                     <p>Levadura<span class="number" id="yeast-num">0</span>gr</p>
                 </div>
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-salt">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/salt.svg" alt="" class="img-fluid">
                     <p>Sal<span class="number" id="salt-num">0</span>gr</p>
                 </div>
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-oil">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/oil.svg" alt="" class="img-fluid">
                     <p>Aceite<span class="number" id="oil-num">0</span>ml</p>
                 </div>
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center"
                 id="sizes-sugar">
-                    <img src="https://picsum.photos/100" alt="" class="img-fluid">
+                    <img src="img/sugar.svg" alt="" class="img-fluid">
                     <p>Azucar<span class="number" id="sugar-num">0</span>gr</p>
                 </div>
                 
