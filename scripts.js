@@ -1,90 +1,86 @@
-const pizzaProp = {
-    napo: {
-        weight: 230,
-        hidra: 65,
-        salt: 3,
+const defaultPizzaProportions = {
+    'napo': {
+        'weight': 230,
+        'water': 65,
+        'salt': 3,
     },
-    sici: {
-        weight: 650,
-        hidra: 75,
-        salt: 2,
+    'sici': {
+        'weight': 650,
+        'water': 75,
+        'salt': 2,
     },
-    ny: {
-        weight: 260,
-        hidra: 65,
-        salt: 2,
+    'ny': {
+        'weight': 260,
+        'water': 65,
+        'salt': 2,
     },
 };
 
 const pizzaSelect = document.getElementById('pizza-type');
 const submitBtn = document.getElementById('submit');
 
-function ing(type){
-    return pizzaProp[type];
+function ingredients(type){
+    return defaultPizzaProportions[type];
 }
 
-function formValues(pizza){
+function formDefaultValues(pizza){
     let weight = document.getElementById('dough-weight');
-    let hidra = document.getElementById('hidra');
+    let water = document.getElementById('water');
     let salt = document.getElementById('salt');
-    weight.value = ing(pizza)['weight'];
-    hidra.value = ing(pizza)['hidra'];
-    salt.value = ing(pizza)['salt'];
+    weight.value = ingredients(pizza)['weight'];
+    water.value = ingredients(pizza)['water'];
+    salt.value = ingredients(pizza)['salt'];
 }
 
-const ingNums = {
-    flour: document.getElementById('flour-num'),
-    hidra: document.getElementById('hidra-num'),
-    yeast: document.getElementById('yeast-num'),
-    salt: document.getElementById('salt-num'),
-    oil: document.getElementById('oil-num'),
-    sugar: document.getElementById('sugar-num')
+const ingredientContainer = {
+    'flour': document.getElementById('flour-num'),
+    'water': document.getElementById('water-num'),
+    'yeast': document.getElementById('yeast-num'),
+    'salt': document.getElementById('salt-num'),
+    'oil': document.getElementById('oil-num'),
+    'sugar': document.getElementById('sugar-num')
 };
 
-function getNapo(){
+function getFinalValues(pizza){
+    //first grabs actual static values
     let amount = document.getElementById('amount').value;
     let weight = document.getElementById('dough-weight').value;
-    let hidra = document.getElementById('hidra').value;
+    let water = document.getElementById('water').value;
     let salt = document.getElementById('salt').value;
-    let flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.002) * 
-    amount);
-    ingNums['flour'].innerText = flour;
-    ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
-    ingNums['yeast'].innerText = Math.round(flour * 0.02 ) / 100; // redondeado
-    ingNums['salt'].innerText = Math.round(flour * salt / 100);
-    ingNums['oil'].innerText = 0;
-    ingNums['sugar'].innerText = 0;
-}
-function getSici(){
-    let amount = document.getElementById('amount').value;
-    let weight = document.getElementById('dough-weight').value;
-    let hidra = document.getElementById('hidra').value;
-    let salt = document.getElementById('salt').value;
-    let flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.03 
-        /*lev+aceit*/) * amount);
-    ingNums['flour'].innerText = flour;
-    ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
-    ingNums['yeast'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
-    ingNums['oil'].innerText = Math.round(flour * 1.5 ) / 100; // redondeado
-    ingNums['salt'].innerText = Math.round(flour * salt / 100);
-    ingNums['sugar'].innerText = 0;
-}
-function getNy(){
-    let amount = document.getElementById('amount').value;
-    let weight = document.getElementById('dough-weight').value;
-    let hidra = document.getElementById('hidra').value;
-    let salt = document.getElementById('salt').value;
-    let flour = Math.round(weight / (1 + hidra / 100 + salt / 100 + 0.004 + 
-        0.025 + 0.02) * amount);
-    ingNums['flour'].innerText = flour;
-    ingNums['hidra'].innerText = Math.round(flour * hidra / 100);
-    ingNums['yeast'].innerText = Math.round(flour * 0.4 ) / 100; // redondeado
-    ingNums['oil'].innerText = Math.round(flour * 2.5 ) / 100; // redondeado
-    ingNums['salt'].innerText = Math.round(flour * salt / 100);
-    ingNums['sugar'].innerText = Math.round(flour * 2 / 100);
+
+    if (pizza === 'napo'){
+        let flour = Math.round(weight / (1 + water / 100 + salt / 100 + 0.002) * 
+        amount);
+        ingredientContainer['flour'].innerText = flour;
+        ingredientContainer['water'].innerText = Math.round(flour * water / 100);
+        ingredientContainer['yeast'].innerText = Math.round(flour * 0.02 ) / 10; // redondeado
+        ingredientContainer['salt'].innerText = Math.round(flour * salt / 100);
+        ingredientContainer['oil'].innerText = 0;
+        ingredientContainer['sugar'].innerText = 0;
+
+    } else if (pizza === 'sici'){
+        let flour = Math.round(weight / (1 + water / 100 + salt / 100 + 0.03 
+            /*lev+aceit*/) * amount);
+        ingredientContainer['flour'].innerText = flour;
+        ingredientContainer['water'].innerText = Math.round(flour * water / 100);
+        ingredientContainer['yeast'].innerText = Math.round(flour * 0.15 ) / 10; // redondeado
+        ingredientContainer['oil'].innerText = Math.round(flour * 0.15 ) / 10; // redondeado
+        ingredientContainer['salt'].innerText = Math.round(flour * salt / 100);
+        ingredientContainer['sugar'].innerText = 0;
+
+    } else if (pizza === "ny"){
+        let flour = Math.round(weight / (1 + water / 100 + salt / 100 + 0.004 + 
+            0.025 + 0.02) * amount);
+        ingredientContainer['flour'].innerText = flour;
+        ingredientContainer['water'].innerText = Math.round(flour * water / 100);
+        ingredientContainer['yeast'].innerText = Math.round(flour * 0.04 ) / 10; // redondeado
+        ingredientContainer['oil'].innerText = Math.round(flour * 0.25 ) / 10; // redondeado
+        ingredientContainer['salt'].innerText = Math.round(flour * salt / 100);
+        ingredientContainer['sugar'].innerText = Math.round(flour * 2 / 100);
+    }
 }
 
-function hideIngredients(){
+function hideEmptyIngredients(){
     if (pizzaSelect.value === 'napo'){
         document.getElementById('sizes-oil').classList.add('hidden');
         document.getElementById('sizes-sugar').classList.add('hidden');
@@ -97,30 +93,17 @@ function hideIngredients(){
     }
 }
 
-function allInOne(pizza){
+function setValues(pizza){
     submitBtn.value = pizza;
-    formValues(pizza);
-    hideIngredients();
-    if (pizza === 'napo'){
-        getNapo();
-    } else if(pizza === 'sici'){
-        getSici();
-    } else {
-        getNy();
-    }
+    formDefaultValues(pizza);
+    hideEmptyIngredients();
+    getFinalValues(pizza);
 }
 
 function submit(pizza){
-    hideIngredients();
-    if (pizza === 'napo'){
-        getNapo();
-    } else if(pizza === 'sici'){
-        getSici();
-    } else {
-        getNy();
-    }
+    hideEmptyIngredients();
+    getFinalValues(pizza);
 }
 
-allInOne ('napo'); // ESTABLECE VALORES POR DEFECTO AL CARGAR LA PAGINA
-pizzaSelect.addEventListener('change', () => allInOne(pizzaSelect.value));
+pizzaSelect.addEventListener('change', () => setValues(pizzaSelect.value));
 submitBtn.addEventListener('click', () => submit(submitBtn.value));
